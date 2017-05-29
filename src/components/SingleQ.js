@@ -18,19 +18,18 @@ export default class SingleQ extends Component {
 		let url = 'https://dbprojrunthrough.herokuapp.com/QA/'
 		axios.get(url)
 		.then((res) => {
-			console.log(res.data.data);
 			let data = res.data.data;
 			data.map((e) => {
 				if(e.qquestion_id === id){
 					console.log(e);
-				 return ( <div>
-				 		<h4> {e.question} </h4>  
-				 	</div> )
-				} 			
+					return (
+							<div> {e.question} </div>
+						)
+				 	}
 			})
-			return <div> ed </div>
 		})
 	}
+	
 
 
     render(){

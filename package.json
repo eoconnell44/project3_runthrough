@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.16.1",
     "bootstrap": "^3.3.7",
+    "now": "^6.2.0",
     "react": "^15.5.4",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.4",

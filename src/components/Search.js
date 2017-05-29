@@ -108,17 +108,17 @@ export default class Search extends Component {
 	
 
 
-  render(){
-  	return(
-  		<div>
-  			<h1> {this.state.search} </h1>
-						<form onSubmit={this.handleSubmitQ}>
-							<FormGroup >
-							<FormControl style={{border:'5px lightgray solid'}} id='qVal' type="text" placeholder="Question"/>
-							</FormGroup>
-						</form>  			
-  			<div> {this.renderAll()} </div>
-  		</div>
-  		)
-  }
+render(){
+	return(
+		<div>
+			<h1> {this.state.search} </h1>
+					<form onSubmit={this.handleSubmitQ}>
+						<FormGroup >
+						<FormControl style={{border:'5px lightgray solid'}} id='qVal' type="text" placeholder="Question"/>
+						</FormGroup>
+					</form>  			
+			<div> {this.renderAll()} </div>
+		</div>
+		)
+ }
 }

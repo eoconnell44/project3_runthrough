@@ -30,10 +30,10 @@ class Header extends Component {
           <Nav>
             <NavItem href="/about">About</NavItem>
               <NavDropdown eventKey={3} title="Topics" id="nav-dropdown">
-                <MenuItem eventKey={3.1} href="/">React</MenuItem>
-                <MenuItem eventKey={1} href="/">Express</MenuItem>
-                <MenuItem eventKey={1} href="/">JavaScript</MenuItem>
-                <MenuItem eventKey={1} href="/">Node.js</MenuItem>
+                <MenuItem eventKey={3.1} href="/topics/react">React</MenuItem>
+                <MenuItem eventKey={1} href="/topics/express">Express</MenuItem>
+                <MenuItem eventKey={1} href="/topics/javascript">JavaScript</MenuItem>
+                <MenuItem eventKey={1} href="/topics/node">Node.js</MenuItem>
             </NavDropdown>
 
           </Nav>
