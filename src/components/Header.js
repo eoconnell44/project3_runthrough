@@ -1,5 +1,13 @@
 import React, {Component} from 'react';
+import {BrowserRouter as Router, Route, Link, Switch, NavLink} from 'react-router-dom'
+import About from './About';
+import Account from './Account';
+import Topics from './Topics';
+import Contact from './Contact';
 import {
+  Bootstrap,
+  Button,
+  DropdownButton,
   MenuItem,
   Nav,
   NavItem,
@@ -8,13 +16,11 @@ import {
   FormGroup,
   FormControl
 } from 'react-bootstrap';
-import {BrowserRouter as Switch, NavLink} from 'react-router-dom';
-import About from './About';
-
 
 class Header extends Component {
   constructor(props) {
     super(props)
+
   }
 
   render() {
@@ -29,16 +35,22 @@ class Header extends Component {
 
           <Nav>
             <NavItem href="/about">About</NavItem>
-              <NavDropdown eventKey={3} title="Topics" id="nav-dropdown">
-                <MenuItem eventKey={3.1} href="/topics/react">React</MenuItem>
-                <MenuItem eventKey={1} href="/topics/express">Express</MenuItem>
-                <MenuItem eventKey={1} href="/topics/javascript">JavaScript</MenuItem>
-                <MenuItem eventKey={1} href="/topics/node">Node.js</MenuItem>
-            </NavDropdown>
+            <NavItem eventKey={2} href="/contact">Contact</NavItem>
 
+            <NavDropdown eventKey={3} title="Topics" id="nav-dropdown">
+              <MenuItem eventKey={3.1} href="/topics/react">React</MenuItem>
+              <MenuItem eventKey={1} href="/topics/express">Express</MenuItem>
+              <MenuItem eventKey={1} href="/topics/javascript">JavaScript</MenuItem>
+              <MenuItem eventKey={1} href="/topics/node">Node</MenuItem>
+            </NavDropdown>
+                        <NavDropdown eventKey={3} title="Q+A" id="nav-dropdown">
+              <MenuItem eventKey={3.1} sub='react' href="/topics/react/qa">React</MenuItem>
+              <MenuItem eventKey={1} href="/topics/express/qa">Express</MenuItem>
+              <MenuItem eventKey={1} href="/topics/javascript/qa">JavaScript</MenuItem>
+              <MenuItem eventKey={1} href="/topics/node/qa">Node</MenuItem>
+            </NavDropdown>
           </Nav>
           <Navbar.Form pullLeft>
-            {/* FormGroup does not provide on submit event. Need to wrap it with form element and attach event handler to it */}
             <form action="/questions" method="post" onSubmit={this.props.onSubmit}>
               <FormGroup >
                 <FormControl id='newVal' type="text" placeholder="Search"/>
@@ -48,14 +60,14 @@ class Header extends Component {
           <Nav>
             <NavDropdown eventKey={3} title="Account" id="basic-nav-dropdown">
               <MenuItem eventKey={3.1}>My Profile</MenuItem>
-              <MenuItem eventKey={1} href="#">Logout</MenuItem>
               <MenuItem eventKey={1} href="/login">Login</MenuItem>
+              <MenuItem eventKey={1} href="/#">Logout</MenuItem>
             </NavDropdown>
+            <NavItem>Register</NavItem>
 
           </Nav>
         </Navbar>
       </div>
-
     )
   }
 }
