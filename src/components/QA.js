@@ -11,7 +11,13 @@ import {
 } from 'react-bootstrap';
 
 const styles = {
-  // overflow: 'scroll'
+  margin: '0 auto',
+  textAlign: 'center'
+}
+const main = {
+  overflow: 'auto',
+  padding: '10',
+  margin: '30 auto'
 }
 
 export default class QA extends Component {
@@ -51,23 +57,23 @@ export default class QA extends Component {
    	console.log('q', this.state.questions);
   	if(this.state.questionArr && this.state.questions){
   	let rendering = this.state.questions.map(e => 
-  			<div key={e.aquestion_id}>
+  			<div style={styles} key={e.aquestion_id}>
             <h4><span>Q:</span> {e.question}</h4>
 
-            <p>{e.answer}</p>
-           
+            <p><span>A:</span>{e.answer}</p>
+           <hr/>
   			</div> 
   			);
   	console.log('rend', rendering);
   
-  		return ( <div> {rendering} </div> )	
+  		return ( <div id='rendering' style={{margin: '0px auto'}}> {rendering} </div> )	
   }
 }
 
  render(){
  	return (
  		<div>
- 				<div> {this.renderData()}  </div>
+ 				<div id='layered' style={main}> {this.renderData()}  </div>
  		
  			</div>
  		)

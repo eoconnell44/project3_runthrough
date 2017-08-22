@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Header from './components/Header';
-import Footer from './components/Footer';
+//import Footer from './components/Footer';
 import About from './components/About';
 import Home from './components/Home';
 import Contact from './components/Contact';
@@ -52,7 +52,7 @@ class App extends Component {
               <Route exact path='/topics/:topic/qa' sub="react" component={QA}/>
             </Switch>
           </div>
-          <Footer />
+          
         </div>
       </Router>
 
